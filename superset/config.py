@@ -1523,7 +1523,7 @@ DATABASE_OAUTH2_JWT_ALGORITHM = "HS256"
 DATABASE_OAUTH2_TIMEOUT = timedelta(seconds=30)
 
 # Enable/disable CSP warning
-CONTENT_SECURITY_POLICY_WARNING = True
+CONTENT_SECURITY_POLICY_WARNING = False
 
 # Do you want Talisman enabled?
 TALISMAN_ENABLED = utils.cast_to_boolean(os.environ.get("TALISMAN_ENABLED", True))
@@ -1541,18 +1541,17 @@ TALISMAN_CONFIG = {
             "https://static.scarf.sh/",
             # "https://avatars.slack-edge.com", # Uncomment when SLACK_ENABLE_AVATARS is True
         ],
-        "worker-src": ["'self'", "blob:"],
+        "worker-src": ["*"],
         "connect-src": [
-            "'self'",
+            "*",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
         ],
         "object-src": "'none'",
         "style-src": [
-            "'self'",
-            "'unsafe-inline'",
+            "*",
         ],
-        "script-src": ["'self'", "'strict-dynamic'"],
+        "script-src": ["*"],
     },
     "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
@@ -1571,18 +1570,17 @@ TALISMAN_DEV_CONFIG = {
             "https://static.scarf.sh/",
             "https://avatars.slack-edge.com",
         ],
-        "worker-src": ["'self'", "blob:"],
+        "worker-src": ["*", "blob:"],
         "connect-src": [
-            "'self'",
+            "*",
             "https://api.mapbox.com",
             "https://events.mapbox.com",
         ],
         "object-src": "'none'",
         "style-src": [
-            "'self'",
-            "'unsafe-inline'",
+            "*",
         ],
-        "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "script-src": ["*"],
     },
     "content_security_policy_nonce_in": ["script-src"],
     "force_https": False,
