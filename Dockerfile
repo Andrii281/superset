@@ -45,6 +45,7 @@ RUN --mount=type=bind,target=/frontend-mem-nag.sh,src=./docker/frontend-mem-nag.
 #     npm ci
 
 WORKDIR /app/superset-frontend
+RUN ls
 RUN npm i
 
 # Runs the webpack build process
