@@ -15,7 +15,8 @@ governing permissions and limitations under the License. #}
 %} {% set favicons = appbuilder.app.config['FAVICONS'] %}
 <html>
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://reflectoadmin.s3.amazonaws.com/client-widget/index.css" />
     <title>
       {% block title %} {% if title %} {{ title }} {% elif appbuilder and
       appbuilder.app_name %} {{ appbuilder.app_name }} {% endif %} {% endblock
