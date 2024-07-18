@@ -45,6 +45,8 @@ RUN --mount=type=bind,target=/frontend-mem-nag.sh,src=./docker/frontend-mem-nag.
 #     npm ci
 
 WORKDIR /app/superset-frontend
+COPY superset-frontend/package.json ./package.json
+COPY superset-frontend/package-lock.json ./package-lock.json
 RUN echo ls
 RUN npm i
 
