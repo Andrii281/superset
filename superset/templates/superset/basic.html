@@ -15,8 +15,6 @@ governing permissions and limitations under the License. #}
 %} {% set favicons = appbuilder.app.config['FAVICONS'] %}
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://reflectoadmin.s3.amazonaws.com/client-widget/index.css" />
     <title>
       {% block title %} {% if title %} {{ title }} {% elif appbuilder and
       appbuilder.app_name %} {{ appbuilder.app_name }} {% endif %} {% endblock
@@ -87,6 +85,8 @@ governing permissions and limitations under the License. #}
         last_name: "Khoma",
         full_name: "Yuriy Khoma",
       };
+      // For demonstration, let's log the USER_DATA to the console
+      console.log(window.USER_DATA);
     </script>
   </head>
 
