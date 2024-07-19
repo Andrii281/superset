@@ -588,7 +588,8 @@ class SupersetAppInitializer:  # pylint: disable=too-many-public-methods
         Compress(self.superset_app)
 
         # Talisman
-        talisman_enabled = self.config["TALISMAN_ENABLED"]
+        # talisman_enabled = self.config["TALISMAN_ENABLED"]
+        talisman_enabled = False
         talisman_config = (
             self.config["TALISMAN_DEV_CONFIG"]
             if self.superset_app.debug or self.config["DEBUG"]
